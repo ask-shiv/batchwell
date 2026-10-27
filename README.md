@@ -1,31 +1,38 @@
 # Batchwell
 
-A React marketing site for the free WooCommerce Scheduled Price Manager plugin, with optional paid services as the business funnel. Batchwell is a proposed brand, not a registered trademark or a verified available domain.
+An open-source React website for the free WooCommerce Scheduled Price Manager plugin. Bulk-edit regular prices and shipping weights in CSV, review the changes, then apply them now or schedule them for later.
 
-## Run
+This repository contains the website and a downloadable plugin archive, not a hosted catalogue editor or the plugin's editable PHP source. The current plugin does not edit stock quantities, product names, variation terms, historical orders or existing subscription contracts.
 
-Use Node.js 22 LTS. Run `npm ci`, then `npm run dev`. For production run `npm run build` and `npm start`. The small Node HTTP server serves the compiled site and honours `PORT`; it does not collect enquiries, store shop data or connect to WooCommerce.
+## Development
 
-## SiteGround deployment
+Use Node.js 22 LTS:
 
-SiteGround's Node.js Projects are supported on GrowBig, GoGeek and Cloud, according to its October 2026 documentation. In Client Area → Websites → Node.js Projects, create a project and connect the repository or upload `batchwell-siteground-source.zip`. Use this project folder as the application root, Node.js 22, install command `npm ci`, build command `npm run build`, and start command `npm start` (or entry file `server.mjs`, depending on the deployment screen). The server listens on the host-provided `PORT`. Verify these settings against the actual dashboard. No deployment has been performed on your account.
+```sh
+npm ci
+npm run dev
+```
 
-This site has no server-side business state, so it can also be hosted as static files. Upload the **contents** of `batchwell-static-site.zip` into the selected site's document root. Avoid overwriting an existing site. The marketing page uses anchors rather than client-side routes, so no SPA rewrite is required.
+Build with `npm run build`. Run the production server with `npm start`; it serves `dist/` and honours `PORT`. Run `python3 package-release.py` after building to generate source and static deployment ZIPs under `release/`. No contact keys, booking configuration, account or external API is required.
 
-Source: https://www.siteground.com/blog/hosting-node-js-projects-with-siteground
+## Deployment
 
-## Before public launch
+For a SiteGround Node.js project, use Node.js 22, install command `npm ci`, build command `npm run build` and start command `npm start`. Use this repository as the application root. The server listens on the host-provided port. Alternatively upload the contents of the generated static ZIP into a separate site's document root. Do not overwrite an existing site accidentally. No SiteGround deployment has been performed by this repository.
 
-- Choose the final name and confirm domain/trademark suitability. No domain has been purchased.
-- Enquiries default to `siobhan@epicurecreative.co.uk`, as supplied by the owner. Set `VITE_CONTACT_EMAIL` in the build environment to change it and rebuild. This is public browser configuration, never a secret. The email action opens the visitor’s email app with their project brief; it does not send automatically.
-- Contact currently uses a mailto draft, not an email-sending backend. Booking links navigate to the configured provider. Add a privacy notice and business identity before collecting personal data through a hosted form or booking provider.
-- The supplied 1.2.1 plugin is an early release. Its remaining production audit gates still apply; the site does not claim public marketplace approval or universal compatibility. Complete those gates before promoting the download widely.
-- The visual product window and interactive example are illustrations. They are not screenshots of a general grid editor, which the plugin does not currently offer.
-- Typography uses Google Fonts with local system fallbacks. Self-host those fonts if your privacy or availability requirements call for it. No analytics, cookies, payment processing or lead database was added.
-- Download archive must be kept in sync with future plugin releases and published version labels. Keep author attribution and GPL licensing in the plugin ZIP.
+## Contributing and support
 
-## Structure
+Read [CONTRIBUTING.md](CONTRIBUTING.md), browse [open issues](https://github.com/ask-shiv/batchwell/issues) or [report a bug](https://github.com/ask-shiv/batchwell/issues/new). Community support has no guaranteed response time. This project has no commercial services funnel, paid tiers or lead collection.
 
-`src/main.jsx` contains page content and demo/enquiry interactions. `src/style.css` contains desktop/mobile layout. `public/downloads/` contains the real plugin ZIP. `server.mjs` serves compiled production assets. `npm run build` generates `dist/`.
+Use Conventional Commits and reference the relevant issue in pull requests. CI builds and packages the website; browser coverage is tracked separately. Keep all product claims aligned with the downloadable plugin's actual capabilities.
 
-Verification: production build, desktop/mobile browser inspection, demo field toggle and approval, enquiry dialog open/close and browser-native focus containment. The service recipient is siobhan@epicurecreative.co.uk. This is a website, not a hosted remote bulk-editing application.
+## Release notes and privacy
+
+The included v1.2.1 plugin is an early release. Test it on staging first. The outstanding plugin production audit must be completed before broad promotion. Keep the archive, version labels and license notices in sync when updating it.
+
+The interactive example uses sample data and stays in your browser. The website has no enquiry form, analytics, tracking cookies, payment processing or lead database. Typography currently loads from Google Fonts with system fallbacks; requests to that provider and ordinary hosting access logs remain relevant to privacy review.
+
+## Structure and license
+
+`src/main.jsx` contains the page and interactive demo. `src/Atmosphere.jsx` contains decorative catalogue artwork. `src/style.css` contains the styles. `server.mjs` serves production assets and `public/downloads/` contains the plugin archive.
+
+Website source: [MIT](LICENSE). Included plugin: GPL-2.0-or-later, with its license preserved inside the ZIP. Third-party dependencies retain their licenses. Batchwell is independent of WooCommerce and makes no claim of endorsement or trademark registration.
