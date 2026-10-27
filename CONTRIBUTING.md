@@ -6,6 +6,6 @@ Use Conventional Commits: `feat:`, `fix:`, `docs:`, `test:`, `refactor:` or `cho
 
 Issues use priority labels and title markers: P1 = launch blocker, P2 = next iteration, P3 = optional enhancement. P0 is reserved for an active critical incident. An issue proposing a feature is not a promise that it is already available.
 
-Keep the current editor free. Safety checks, previews and scheduling are core features. Do not introduce mandatory AI access, API keys or account gates. Never commit real credentials, visitor enquiries or production configuration secrets. `VITE_` variables are public browser values.
+Batchwell is an open-source-only project. Do not add paid tiers, services funnels, lead capture, license gates or mandatory accounts. Safety checks, previews and scheduling are core features. Never commit real credentials or production secrets. `VITE_` variables are public browser values. Optional AI proposals must preserve a fully usable editor without AI or an API key.
 
 The plugin ZIP under `public/downloads/` is a separate GPL-licensed deliverable. Preserve its license and identify the version when replacing it. Completing the plugin's production audit is separate from building this marketing website.
