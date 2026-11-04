@@ -10,7 +10,7 @@ with ZipFile(out / 'batchwell-static-site.zip', 'w', ZIP_DEFLATED) as z:
 with ZipFile(out / 'batchwell-siteground-source.zip', 'w', ZIP_DEFLATED) as z:
     for name in ['package.json', 'package-lock.json', 'index.html', 'server.mjs', 'README.md', 'LICENSE', 'CONTRIBUTING.md']:
         z.write(root / name, name)
-    for folder in ['src', 'public']:
+    for folder in ['src', 'public', 'tests']:
         for file in sorted((root / folder).rglob('*')):
             if file.is_file() and not file.name.startswith('.'):
                 z.write(file, file.relative_to(root))

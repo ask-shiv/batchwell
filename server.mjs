@@ -16,4 +16,4 @@ const server=http.createServer(async(req,res)=>{
   res.end(req.method==='HEAD'?undefined:data);
  }catch{res.writeHead(400);res.end('Bad request')}
 });
-server.listen(Number(process.env.PORT)||3000,'0.0.0.0',()=>console.log('Batchwell server ready'));
+server.listen(process.env.PORT === undefined ? 3000 : Number(process.env.PORT),'0.0.0.0',()=>console.log(`Batchwell server ready on port ${server.address().port}`));

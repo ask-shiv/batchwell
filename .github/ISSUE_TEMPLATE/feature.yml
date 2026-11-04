@@ -1,0 +1,21 @@
+name: Feature proposal
+description: Suggest an improvement to the free community project.
+title: '[Proposal] '
+body:
+  - type: markdown
+    attributes:
+      value: 'Batchwell remains free and open source. Current plugin scope is CSV regular prices and shipping weights. A proposal is not a release promise. Do not include private data.'
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem do you need to solve?
+      description: Describe your workflow and current workaround.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behaviour
+      description: Describe the smallest useful improvement and how you would verify it.
+    validations:
+      required: true
