@@ -1,5 +1,7 @@
 # Contributing
 
+Use the GitHub bug report or feature proposal form when opening an issue. Include reproducible steps and environment versions for bugs; explain the workflow and smallest useful outcome for proposals. Use anonymised examples only.
+
 Use Node.js 22 and install with `npm ci`. Verify changes with `npm run build`; visually check affected layouts and interactions before proposing UI changes.
 
 Use Conventional Commits: `feat:`, `fix:`, `docs:`, `test:`, `refactor:` or `chore:` followed by a concise lowercase description. Use the same format for pull request titles. Reference the issue, describe the resulting behaviour and state what was verified.

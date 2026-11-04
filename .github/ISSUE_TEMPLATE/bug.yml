@@ -1,0 +1,36 @@
+name: Bug report
+description: Report a reproducible website or plugin problem.
+title: '[Bug] '
+body:
+  - type: markdown
+    attributes:
+      value: 'Community support has no guaranteed response time. Never share credentials, customer details or private catalogue data. Use anonymised examples.'
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - Website
+        - Downloadable plugin
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment and versions
+      description: Browser and OS; for plugin reports include plugin, WordPress, WooCommerce and PHP versions.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Include a minimal anonymised example and whether this happens on staging.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Expected and actual behaviour
+    validations:
+      required: true

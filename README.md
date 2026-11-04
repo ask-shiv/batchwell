@@ -6,6 +6,8 @@ This repository contains the website and a downloadable plugin archive, not a ho
 
 ## Development
 
+After building, run `npm test` to check production GET/HEAD responses, asset caching, security headers and error handling. CI runs these checks using Node.js 22.
+
 Use Node.js 22 LTS:
 
 ```sh
